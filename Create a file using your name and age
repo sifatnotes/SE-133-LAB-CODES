@@ -1,0 +1,26 @@
+/ Create a file using your name and age
+#include<stdio.h>
+int main()
+{
+    FILE *file;
+    char name[20];
+    int age;
+    file = fopen("test.txt","w");
+
+    if(file==NULL)
+    {
+        printf("File doesn't exist");
+    }
+    else
+    {
+        printf("File is open\n");
+        printf("Enter your name: ");
+        gets(name);
+        printf("\nEnter your age: ");
+        scanf("%d",&age);
+        fprintf(file,"Name-%s , Age-%d\n",name,age);
+        printf("\nFile is written successfully");
+        fclose(file);
+    }
+}
+
